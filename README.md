@@ -1,6 +1,5 @@
-# AndroidApp4
-SuperPodcast Android App
-# SuperPodcast
+
+# SuperPodcast Android App
 
 SuperPodcast is an Android application developed as part of **AndroidApp4**.
 
