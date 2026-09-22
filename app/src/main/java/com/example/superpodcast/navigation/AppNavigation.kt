@@ -25,7 +25,6 @@ fun AppNavigation() {
     val podcastViewModel: PodcastViewModel = viewModel()
     val subscriptionViewModel: SubscriptionViewModel = viewModel()
 
-    // Observe subscription changes
     val subscriptions by subscriptionViewModel.subscriptions.collectAsState()
 
     NavHost(
@@ -37,7 +36,6 @@ fun AppNavigation() {
         composable(
             route = Screen.Home.route
         ) {
-
             HomeScreen(
                 onSearchClick = {
                     navController.navigate(Screen.Search.route)
@@ -53,7 +51,6 @@ fun AppNavigation() {
         composable(
             route = Screen.Search.route
         ) {
-
             SearchScreen(
                 viewModel = podcastViewModel,
 
@@ -85,7 +82,6 @@ fun AppNavigation() {
                     podcastViewModel.getPodcastById(it)
                 }
 
-            // Check subscription reactively
             val isSubscribed =
                 podcast?.let { currentPodcast ->
 
@@ -123,7 +119,6 @@ fun AppNavigation() {
         composable(
             route = Screen.Subscriptions.route
         ) {
-
             SubscriptionsScreen(
                 viewModel = subscriptionViewModel,
 
@@ -141,7 +136,6 @@ fun AppNavigation() {
         composable(
             route = Screen.Player.route
         ) {
-
             PlayerScreen()
         }
     }
